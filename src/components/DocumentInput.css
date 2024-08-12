@@ -1,0 +1,47 @@
+.document-input-container {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 30%;
+}
+
+.document-type-select {
+    position: relative;
+}
+
+.document-type-select .select-box {
+    width: 120px;
+    padding: 15px;
+    border: 1px solid gainsboro;
+    background-color: white;
+    appearance: none;
+    cursor: pointer;
+}
+
+.document-type-select .arrow {
+    position: absolute;
+    right: 20px;
+    top: 36%;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    pointer-events: none;
+}
+
+.document-number-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.document-number-input::placeholder {
+    color: #999;
+}
+
+.arrow {
+    border: solid #e22a3c;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}

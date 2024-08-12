@@ -1,0 +1,97 @@
+.section-repositories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    background: #F7F8FC;
+    width: 100%;
+}
+
+.section-repositories h2 {
+    overflow: hidden; /*Garantiza que el contenido no se revele hasta la animación.*/
+    border-right: .15em solid #e22a3c;/* The typwriter cursor */
+    white-space: nowrap;/* Keeps the content on a single line */
+    margin: 0 auto;/* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em;/* Adjust as needed */
+    animation:
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
+/* El efecto de escritura */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 30%
+    }
+}
+
+/* El efecto cursor de máquina de escribir */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: #e22a3c;
+    }
+}
+
+.title-section-repositories {
+    color: #e22a3c;
+    text-transform: uppercase;
+}
+
+.repository-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    width: 50%;
+}
+
+.repository-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 2px solid #e22a3c;
+    border-radius: 5px;
+    box-shadow: 8px 5px black;
+}
+
+.owner-contributors {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.loading-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-repositories {
+    display: flex;
+    flex-direction: column;
+}
+
+.loading-gif {
+    width: 80px;
+}
+
+.repository-link {
+    color: black;
+    transition: .3s;
+}
+
+.repository-link:hover {
+    color: rgb(83, 83, 224);
+    transform: translateY(10px);
+}

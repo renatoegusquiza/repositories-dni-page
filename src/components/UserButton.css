@@ -1,0 +1,19 @@
+.user-button {
+    background-color: #e22a3c;
+    color: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.user-button .icon{
+    margin-right: 8px;
+}
+
+.user-button:hover{
+    background-color: #c82333;
+}

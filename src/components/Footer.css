@@ -1,0 +1,59 @@
+.footer-content{
+    position: relative; /* Asegúrate de que el footer esté en el flujo normal del documento */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.logo-all-rights-reserved{
+    display: flex;
+    padding: 31px;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo-rimac-blanco{
+    max-width: 90px;
+    max-height: 50px;
+}
+
+.logo-all-rights-reserved p{
+    font-size: 12px;
+    color: gray;
+}
+
+.footer-links{
+    display: flex;
+    padding: 31px;
+    align-items: center;
+    gap: 40px;
+}
+
+.app-store-link{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.google-play-link{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.footer-links p{
+    font-size: 12px;
+    color: #e22a3c;
+}
+
+.apple-icon{
+    font-size: 20px;
+    color: #e22a3c;
+}
+
+.google-play-icon{
+    font-size: 16px;
+    color: #e22a3c;
+}
+

@@ -1,0 +1,85 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 82vh;
+    overflow: auto;
+}
+
+.start-description-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    background: #F7F8FC;
+}
+
+.all-first-section-container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 100px 140px 100px 140px;
+}
+
+.start-description-title{
+    color: rgb(178, 178, 178);
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.consultation-title{
+    font-size: 2.2rem;
+    font-weight: 300;
+}
+
+strong{
+    color: #e22a3c;
+}
+
+.start-description-text{
+    font-size: 17px;
+    color: rgb(178, 178, 178);
+    font-weight: 300;
+}
+
+/* SECCION 2 */
+
+.edition-documents-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.all-second-section-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 100px 140px 100px 140px;
+}
+
+.edition-documents-title{
+    font-size: 19px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.start-button{
+    background-color: #e22a3c;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    width: 145px;
+    height: 50px;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 12px;
+}
+
+.start-button:hover{
+    background-color: #ca2839;
+    cursor: pointer;
+}

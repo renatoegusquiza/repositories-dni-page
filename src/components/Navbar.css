@@ -1,0 +1,23 @@
+.container-navbar{
+    display: flex;
+    background: #e22a3c;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo-navbar{
+    max-width: 120px;
+    max-height: 80px;
+}
+
+.navbar-links{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+    padding: 15px;
+}
+
+.navbar-link a{
+    color: white;
+}
