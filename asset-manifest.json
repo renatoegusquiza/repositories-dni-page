@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/repositories-dni-page/static/css/main.2895db6d.css",
+    "main.js": "/repositories-dni-page/static/js/main.e88c9e79.js",
+    "static/media/loading.gif": "/repositories-dni-page/static/media/loading.12b957281d0ef1d9e08b.gif",
+    "static/media/rimac-logo.png": "/repositories-dni-page/static/media/rimac-logo.37b235de5630c166f81f.png",
+    "index.html": "/repositories-dni-page/index.html",
+    "main.2895db6d.css.map": "/repositories-dni-page/static/css/main.2895db6d.css.map",
+    "main.e88c9e79.js.map": "/repositories-dni-page/static/js/main.e88c9e79.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2895db6d.css",
+    "static/js/main.e88c9e79.js"
+  ]
+}
