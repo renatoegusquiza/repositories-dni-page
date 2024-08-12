@@ -21,7 +21,7 @@ const GitHubRepos = () => {
         // Función asíncrona para obtener los repositorios y sus contribuidores
         const fetchRepos = async () => {
             // Reemplaza esto con tu token de acceso personal
-            const token = process.env.REACT_APP_GITHUB_TOKEN;; // Token de acceso personal a la API de GitHub
+            const token = process.env.REACT_APP_GITHUB_TOKEN; // Token de acceso personal a la API de GitHub
                                                                //Esto llama al token dentro de la variable de entorno
 
             try {
