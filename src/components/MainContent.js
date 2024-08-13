@@ -1,47 +1,12 @@
-import React, { useState } from 'react'
-import GitHubRepos from './GitHubRepos';
+import React from 'react'
 
 //Import del componente documentos
-import DocumentInput from './DocumentInput'
+import UserGithubInput from './UserGithubInput';
 
 //Import de los estilos
 import './MainContent.css'
 
 export default function MainContent() {
-    const [documentType, setDocumentType] = useState('DNI');
-    const [numberDocument, setNumberDocument] = useState('');
-    const [data, setData] = useState(null);
-
-    const handleDocumentChange = (type, number) => {
-        setDocumentType(type);
-        setNumberDocument(number);
-    };
-
-    const handleSubmit = async () => {
-
-        let apiUrl = '';
-
-        // Se va a construir la URL de la API basada en el tipo de documento y número
-        if (documentType === 'DNI') {
-            apiUrl = `https://api.example.com/dni/${numberDocument}`;
-        } else if (documentType === 'Pasaporte') {
-            apiUrl = `https://api.example.com/pasaporte/${numberDocument}`;
-        }
-
-        //Aqui iria la logica para enviar los datos
-        try{
-            const response = await fetch(apiUrl);
-
-            if(!response.ok){
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
-            }
-            const result = await response.json();
-            setData(result);
-        } catch (error){
-            console.error('Error al obtener datos:', error);
-            setData({ error: 'No se pudo obtener la información' });
-        }
-    }
 
     return (
         <>
@@ -56,11 +21,9 @@ export default function MainContent() {
                 <section className='edition-documents-container'>
                     <div className='all-second-section-container'>
                         <p className='edition-documents-title'>Edita los datos para realizar la búsqueda</p>
-                        <DocumentInput onDocumentChange={handleDocumentChange}/>
-                        <button onClick={handleSubmit} className='start-button'>Comencemos</button>
+                        <UserGithubInput/>
                     </div>
                 </section>
-                <GitHubRepos/>
                 {/*data && (
                     <section className='result-container'>
                         {data.error ? (

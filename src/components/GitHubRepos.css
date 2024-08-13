@@ -10,10 +10,10 @@
 
 .section-repositories h2 {
     overflow: hidden; /*Garantiza que el contenido no se revele hasta la animación.*/
-    border-right: .15em solid #e22a3c;/* The typwriter cursor */
-    white-space: nowrap;/* Keeps the content on a single line */
-    margin: 0 auto;/* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em;/* Adjust as needed */
+    border-right: .15em solid #e22a3c;/* El cursor al momento de escribir */
+    white-space: nowrap;/* Mantiene el contenido en una sola línea. */
+    margin: 0 auto;/* Da ese efecto de desplazamiento a medida que se escribe */
+    letter-spacing: .15em;
     animation:
         typing 3.5s steps(40, end),
         blink-caret .75s step-end infinite;

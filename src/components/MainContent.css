@@ -48,7 +48,7 @@ strong{
 .edition-documents-container{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
     width: 100%;
 }
 
@@ -65,21 +65,4 @@ strong{
     font-size: 19px;
     font-weight: 300;
     margin-bottom: 10px;
-}
-
-.start-button{
-    background-color: #e22a3c;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    width: 145px;
-    height: 50px;
-    text-transform: uppercase;
-    font-weight: 800;
-    font-size: 12px;
-}
-
-.start-button:hover{
-    background-color: #ca2839;
-    cursor: pointer;
 }

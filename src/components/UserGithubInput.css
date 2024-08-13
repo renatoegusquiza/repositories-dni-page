@@ -1,0 +1,140 @@
+.search-user-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    gap: 20px;
+}
+
+.search-user-github{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.user-github-input {
+    flex-grow: 1;
+    padding: 15px 25px;
+    border: 1px solid #dfe1e5;
+    box-shadow: 0px 1px 6px rgba(32, 33, 36, 0.28);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.user-github-input:focus{
+    outline: none;
+    border-color: #4285f4;
+    box-shadow: 0px 1px 6px rgba(66, 133, 244, 0.5);
+}
+
+.search-user-github label{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    padding: 5px;
+    background-color: white;
+    color: #9aa0a6;
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.user-github-input:focus + label,
+.user-github-input:not(:placeholder-shown) + label {
+    top: -10px;
+    font-size: 12px;
+    color: #4285f4;
+}
+
+.start-button{
+    background-color: #e22a3c;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    width: 145px;
+    height: 50px;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 12px;
+}
+
+.start-button:hover{
+    background-color: #ca2839;
+    cursor: pointer;
+}
+
+.user-github{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.avatar-user-github{
+    width: 300px;
+    border: 2px solid #4285f4;
+    border-radius: 10%;
+}
+
+.username-github{
+    text-transform: uppercase;
+    overflow: hidden;
+    border-right: .15em solid black;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation:
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
+/* El efecto de escritura */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 30%
+    }
+}
+
+/* El efecto cursor de máquina de escribir */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    60% {
+        border-color: black;
+    }
+}
+
+.bio-github{
+    font-style: italic;
+}
+
+.repos-github{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.repos-github h3{
+    text-transform: uppercase;
+    color: #e22a3c;
+}
+
+.repos-github ul li{
+    list-style: none;
+}
+
+.repos-github ul li:not(:last-child){
+    margin-bottom: 10px;
+}
