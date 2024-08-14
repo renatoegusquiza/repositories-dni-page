@@ -21,63 +21,43 @@ function UserGithubInput() {
     //const [loading, setLoading] = useState(true);
     //const [error, setError] = useState(null);
 
-    const apiGitHub = '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'
+    //const apiGitHub = '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'
 
     const fetchUser = async () => {
-        //setLoading(true); // Inicia la carga
-        //setError(null); // Limpia cualquier error previo
         setUser(null);
         setReposWithDetails([]);
         try {
-            const userResponse = await fetch(`https://api.github.com/users/${search}`, {
-                headers: {
-                    Authorization: `Bearer ${apiGitHub}`,
-                }
-            });
+            // Solicitud para obtener datos del usuario sin autenticación
+            const userResponse = await fetch(`https://api.github.com/users/${search}`);
 
             if (!userResponse.ok) {
-                throw new Error('Error en la consulta de la api')
+                throw new Error('Error en la consulta de la API');
             }
 
             const userData = await userResponse.json();
             console.log('User Data:', userData); // Verifica la respuesta del usuario
             setUser(userData);
 
-
-            // Fetch de los repositorios
-            const reposResponse = await fetch(userData.repos_url, {
-                headers: {
-                    Authorization: `Bearer ${apiGitHub}`,
-                }
-            });
+            // Fetch de los repositorios sin autenticación
+            const reposResponse = await fetch(userData.repos_url);
 
             if (!reposResponse.ok) {
-                throw new Error('Error en la consulta de la api para repositorios');
+                throw new Error('Error en la consulta de la API para repositorios');
             }
 
             const reposData = await reposResponse.json();
             console.log('Repos Data:', reposData); // Verifica la respuesta de los repositorios
             const reposWithDetailsData = [];
 
-            // Itera sobre cada repositorio para obtener sus contribuidores
+            // Itera sobre cada repositorio para obtener sus contribuidores, issues, branches, etc.
             for (let repo of reposData) {
                 const [contributorsResponse, issuesResponse, branchesResponse, stargazersResponse, releasesResponse] = await Promise.all([
-                    fetch(repo.contributors_url, {
-                        headers: { Authorization: `Bearer ${apiGitHub}` }
-                    }),
-                    fetch(`${repo.url}/issues`, {
-                        headers: { Authorization: `Bearer ${apiGitHub}` }
-                    }),
-                    fetch(`${repo.url}/branches`, {
-                        headers: { Authorization: `Bearer ${apiGitHub}` }
-                    }),
-                    fetch(`${repo.url}/stargazers`, {
-                        headers: { Authorization: `Bearer ${apiGitHub}` }
-                    }),
-                    fetch(`${repo.url}/releases`, {
-                        headers: { Authorization: `Bearer ${apiGitHub}` }
-                    })
-                ])
+                    fetch(repo.contributors_url),
+                    fetch(`${repo.url}/issues`),
+                    fetch(`${repo.url}/branches`),
+                    fetch(`${repo.url}/stargazers`),
+                    fetch(`${repo.url}/releases`)
+                ]);
 
                 const [contributorsText, issuesText, branchesText, stargazersText, releasesText] = await Promise.all([
                     contributorsResponse.text(),
@@ -95,16 +75,6 @@ function UserGithubInput() {
                     releasesText ? JSON.parse(releasesText) : []
                 ];
 
-                /*
-                const [contributorsData, issuesData, branchesData, stargazersData, releasesData] = await Promise.all([
-                    contributorsResponse.json(),
-                    issuesResponse.json(),
-                    branchesResponse.json(),
-                    stargazersResponse.json(),
-                    releasesResponse.json(),
-                ]);
-                */
-
                 reposWithDetailsData.push({
                     ...repo,
                     contributors: contributorsResponse.ok ? contributorsData : [],
@@ -116,47 +86,8 @@ function UserGithubInput() {
             }
             setReposWithDetails(reposWithDetailsData); // Actualiza el estado con los repositorios y sus detalles
 
-
-            /*
-            //Fetch para los eventos
-            // Realiza una solicitud para obtener los eventos públicos del usuario.
-            const eventsResponse = await fetch(userData.events_url, {
-                headers: {
-                    Authorization: `Bearer ${apiGitHub}`, // Autenticación con el token de GitHub.
-                }
-            });
-
-            // Si la respuesta no es exitosa, lanza un error.
-            if (!eventsResponse.ok) {
-                throw new Error('Error en la consulta de la API para los eventos');
-            }
-
-            // Convierte la respuesta a JSON y guarda los datos de los eventos en el estado 'events'.
-            const eventsData = await eventsResponse.json();
-            setEvents(eventsData);
-
-
-            //Fetch para los gists
-            // Realiza una solicitud para obtener los gists públicos del usuario.
-            const gistsResponse = await fetch(userData.gists_url, {
-                headers: {
-                    Authorization: `Bearer ${apiGitHub}`, // Autenticación con el token de GitHub.
-                }
-            });
-
-            // Si la respuesta no es exitosa, lanza un error.
-            if (!gistsResponse.ok) {
-                throw new Error('Error en la consulta de la API para los gists');
-            }
-
-            // Convierte la respuesta a JSON y guarda los datos de los gists en el estado 'gists'.
-            const gistsData = await gistsResponse.json();
-            setGists(gistsData);
-            */
-
         } catch (error) {
             console.error('error', error.message);
-            //setError('Error al obtener los repositorios.');
         }
     }
 
